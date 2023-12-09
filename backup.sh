@@ -1,4 +1,6 @@
-#! /bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
+
 #zrzut baz danych
 for DB in $(mysql -e 'show databases' -s --skip-column-names); do
     mysqldump $DB | gzip -c > ./bak/$DB-backup_$(date +%F-%H_%M).sql.gz;
