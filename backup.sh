@@ -13,3 +13,5 @@ tar -czf ./bak/forumbackup__$(date +%F-%H_%M).tar.xz ./public_html/forum/ -R
 tar -czf ./bak/wikibackup__$(date +%F-%H_%M).tar.xz ./public_html/wiki/ -R
 ## usuwanie starszych backupów
 #find /bak -mtime +7d -delete #--exec rm {}
+
+curl https://nosnch.in/9764978ed7
