@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
+dbs=("p579450_forum" "p579450_wiki" "p579450_www")
 #zrzut baz danych
-for DB in $(mysql -e 'show databases' -s --skip-column-names); do
+for DB in "${dbs[@]}" 
+do
     mysqldump $DB | gzip -c > ./bak/$DB-backup_$(date +%F-%H_%M).sql.gz;
 done
 
